@@ -62,15 +62,15 @@ buttonEl.addEventListener ('click' , function() {
     // ciclo per creare le 16 bombe
     while (bombe.length < 16) {
         // genera un numero random 
-        let bomba = Math.floor(Math.random() * (numerocelle) + 1 )
+        // Math.floor(Math.random() * (max - min + 1)) + min;
+        let bomba = creaNumeroRandom(numerocelle , 1) ;
         // controllo del numero se sia gia presente e diverso da 0
-        if (bombe.includes(bomba) || bomba == 0) {
-            
-        } else {
-            // aggiunge la bomba alla lista delle boombe
+        if (!(bombe.includes(bomba))) {
             bombe.push(bomba)
         }
     }
+
+    console.log (bombe)
 
     //ciclo per creare le celle che formano la griglia
     for (let i = 1 ; i <= numerocelle ; i++) {
@@ -107,6 +107,8 @@ buttonEl.addEventListener ('click' , function() {
                 console.log (bombe)
                 console.log (bombaesplosa.innerHTML)
     
+            } else if(punteggio == numerocelle - 16){
+                outputPunteggioEl.innerHTML = 'hai vinto'
             } else {
                 // funzione creata per selezionare e segnare il valore
                 selezionaEprendiValore(casella)
@@ -124,6 +126,11 @@ buttonEl.addEventListener ('click' , function() {
 
 
 // -------------------funzioni------------------------
+
+function creaNumeroRandom (max , min) {
+    return Math.floor(Math.random() * (max - min + 1)) +1 
+
+}
 
 function creacella(numerocelle) {
 
