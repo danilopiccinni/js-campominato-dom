@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 35px;
+    align-self: center;
+}
+
+.nav-sinistro {
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    height: calc(100vh - 130px);
+    background-image: url(../img/25829.jpg);
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+      
+    
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    justify-content: center;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#output-griglia{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    border-radius: 18px;
+    /* border: 5px double rgb(141, 141, 141); */
+
+} 
+
+.nav-destro {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
+}
+
+.square {
+    font-weight: bold;
+    color: #24232b;
+    display: flex;
+    font-size: 20px;
+    padding-top: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+
+    border-radius: 25%;
+
+    background-image: url(../img/icons8-foglia-di-marijuana-50.png);
+    background-color: #7b7b7bdc;
+}
+
+.verde {
+    background-color: #09ff00a0;
+}
+
+.nera {
+    background-color: black;
+
+    color: red;
+}
+
+#play-button,
+#difficolta,
+#ricomincia,
+#arrenditi {
+    font-family: sans-serif;
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+    border: 1px solid gray;
+    cursor: pointer;
+    pointer-events: stroke;
+    background-color: #49b35a;
+    color: white;
+}
+
+#difficolta {
+    background-color:transparent;
+    color: gray;
+}
+
+.nav-centrale {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    padding-bottom: 5px;
+    padding-right: 67px;
+
+}
+
+.selezione {
+    color: black;
+}
+
+footer div span {
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+}
+
