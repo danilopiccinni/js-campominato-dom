@@ -77,29 +77,6 @@ buttonEl.addEventListener ('click' , function() {
         // evento click sulla singola cella 
         casella.addEventListener ('click' , function() {
 
-            // for (let i =0 ; i < bombe.length ; i++) {
-
-
-            //     if (bombe.includes(parseInt(casella.innerText)) ) {
-            //         diventaNera(casella)
-
-            //         console.log('perso')
-
-            //         console.log (punteggio)
-            //     } else {
-            //         // funzione creata per selezionare e segnare il valore
-            //         selezionaEprendiValore(casella)
-            //         punteggio += 1 
-
-            //         console.log(punteggio)
-    
-            //     }
-            // }
-
-
-
-
-
 
                 if (bombe.includes(parseInt(casella.innerText)) ) {
                     diventaNera(casella)
