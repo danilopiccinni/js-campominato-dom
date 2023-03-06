@@ -47,6 +47,7 @@ let punteggio = 0;
 // output dove si visualizza il punteggio e fine partita
 let outputPunteggioEl = document.getElementById ('risultato-punteggio')
 
+
 //evento click sul bottone avvio gioco
 buttonEl.addEventListener ('click' , function() {
     // dichiaro e memorizzo la difficolta calcolata con una function una function 
@@ -85,7 +86,7 @@ buttonEl.addEventListener ('click' , function() {
         }
         
         // evento click sulla singola cella 
-        casella.addEventListener ('click' , function() , true {
+        casella.addEventListener ('click' , function() {
             // condizione che controlla se la cella cliccata sia una bomba o no (se la casella/il suo valore sia inclusa neila lista bombe )
             if (bombe.includes(parseInt(casella.innerText)) ) {
 
@@ -102,6 +103,9 @@ buttonEl.addEventListener ('click' , function() {
                     // aggiungo la classe necessaria a farle diventare nere
                     bombaesplosa[i].classList.add ('nera')    
                 }
+
+                console.log (bombe)
+                console.log (bombaesplosa.innerHTML)
     
             } else {
                 // funzione creata per selezionare e segnare il valore
@@ -109,8 +113,11 @@ buttonEl.addEventListener ('click' , function() {
                 // e aumento di 1 il punteggio ogni volta che il programma entra nel altrimenti
                 punteggio += 1 
 
+
+                console.log(punteggio)
+
             }    
-        })
+            },  {once : true})
     }   
 })
 
@@ -131,14 +138,14 @@ function creacella(numerocelle) {
 
 function selezionaEprendiValore(casella) {
 
-    casella.classList.toggle ('verde')
+    casella.classList.add ('verde')
     console.log (casella.innerText)  
 
 }
 
 function diventaNera(casella) {
 
-    casella.classList.toggle ('nera')
+    casella.classList.add ('nera')
 
 }
 
