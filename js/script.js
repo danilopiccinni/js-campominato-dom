@@ -87,6 +87,10 @@ buttonEl.addEventListener ('click' , function() {
         
         // evento click sulla singola cella 
         casella.addEventListener ('click' , function() {
+
+            if(punteggio == numerocelle - 16){
+                outputPunteggioEl.innerHTML = 'hai vinto'
+            } else
             // condizione che controlla se la cella cliccata sia una bomba o no (se la casella/il suo valore sia inclusa neila lista bombe )
             if (bombe.includes(parseInt(casella.innerText)) ) {
 
@@ -107,13 +111,19 @@ buttonEl.addEventListener ('click' , function() {
                 console.log (bombe)
                 console.log (bombaesplosa.innerHTML)
     
-            } else if(punteggio == numerocelle - 16){
-                outputPunteggioEl.innerHTML = 'hai vinto'
-            } else {
+            } else  {
                 // funzione creata per selezionare e segnare il valore
                 selezionaEprendiValore(casella)
                 // e aumento di 1 il punteggio ogni volta che il programma entra nel altrimenti
                 punteggio += 1 
+
+                if(punteggio == numerocelle - 16){
+                    outputPunteggioEl.innerHTML = 'hai vinto'
+                    outputPunteggioEl.style.color = 'red';
+                    outputPunteggioEl.style.fontSize = '40px'
+                    outputPunteggioEl.style.textAlign = 'center'
+
+                } 
 
 
                 console.log(punteggio)
