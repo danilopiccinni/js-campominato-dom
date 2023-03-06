@@ -94,11 +94,7 @@ buttonEl.addEventListener ('click' , function() {
             // condizione che controlla se la cella cliccata sia una bomba o no (se la casella/il suo valore sia inclusa neila lista bombe )
             if (bombe.includes(parseInt(casella.innerText)) ) {
 
-                // stilizazione del output dove comparirà il messaggio di fine partita e relativo punteggio accumulato
-                outputPunteggioEl.style.color = 'red';
-                outputPunteggioEl.style.fontSize = '40px'
-                outputPunteggioEl.style.textAlign = 'center'
-                outputPunteggioEl.innerHTML= 'hai beccato una bomba GAME OVER ' + 'il tuo punteggio è ' + punteggio
+                annunciaSconfitta()
                 
                 // bersaglio tutti gli elementi con la classe fittizzia assegnata tramite la creazione delle bombe e la assegno a una variabile
                 let bombaesplosa = document.querySelectorAll ('.isAbomb')
@@ -118,11 +114,8 @@ buttonEl.addEventListener ('click' , function() {
                 punteggio += 1 
 
                 if(punteggio == numerocelle - 16){
-                    outputPunteggioEl.innerHTML = 'hai vinto'
-                    outputPunteggioEl.style.color = 'red';
-                    outputPunteggioEl.style.fontSize = '40px'
-                    outputPunteggioEl.style.textAlign = 'center'
-
+                    
+                    annunciaVittoria()
                 } 
 
 
@@ -136,6 +129,22 @@ buttonEl.addEventListener ('click' , function() {
 
 
 // -------------------funzioni------------------------
+function annunciaSconfitta() {
+// stilizazione del output dove comparirà il messaggio di fine partita e relativo punteggio accumulato
+    outputPunteggioEl.style.color = 'red';
+    outputPunteggioEl.style.fontSize = '40px'
+    outputPunteggioEl.style.textAlign = 'center'
+    outputPunteggioEl.innerHTML= 'hai beccato una bomba GAME OVER ' + 'il tuo punteggio è ' + punteggio
+}
+
+function annunciaVittoria() {
+// stilizazione del output dove comparirà il messaggio di fine partita e relativo punteggio accumulato
+
+    outputPunteggioEl.innerHTML = 'hai vinto'
+    outputPunteggioEl.style.color = 'red';
+    outputPunteggioEl.style.fontSize = '40px'
+    outputPunteggioEl.style.textAlign = 'center'
+}
 
 function creaNumeroRandom (max , min) {
     return Math.floor(Math.random() * (max - min + 1)) +1 
